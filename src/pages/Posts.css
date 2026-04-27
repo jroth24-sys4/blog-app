@@ -1,0 +1,245 @@
+.posts-page {
+  min-height: 100vh;
+  background: #0a0a0a;
+  color: #f0ece4;
+  font-family: 'DM Sans', sans-serif;
+  position: relative;
+}
+
+.posts-header {
+  padding: 8rem 3rem 4rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  position: relative;
+  z-index: 2;
+}
+
+.posts-header-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.posts-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #f0ece4;
+  margin-bottom: 0.75rem;
+}
+
+.posts-header p {
+  color: rgba(240, 236, 228, 0.5);
+  font-size: 1rem;
+}
+
+.posts-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.post-card {
+  padding: 3rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  animation: fadeUp 0.5s ease both;
+}
+
+.post-card:nth-child(2) { animation-delay: 0.1s; }
+.post-card:nth-child(3) { animation-delay: 0.2s; }
+
+.post-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.post-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #ffc864;
+  background: rgba(255, 200, 100, 0.1);
+  padding: 0.25rem 0.6rem;
+  border-radius: 2px;
+}
+
+.post-date {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  color: rgba(240, 236, 228, 0.3);
+}
+
+.post-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #f0ece4;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.post-excerpt {
+  color: rgba(240, 236, 228, 0.55);
+  line-height: 1.75;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.post-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.post-author {
+  font-size: 0.85rem;
+  color: rgba(240, 236, 228, 0.5);
+}
+
+.post-read {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  color: rgba(240, 236, 228, 0.3);
+}
+
+.expand-btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(240, 236, 228, 0.6);
+  padding: 0.6rem 1.2rem;
+  border-radius: 2px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.expand-btn:hover {
+  border-color: #ffc864;
+  color: #ffc864;
+}
+
+.post-expanded {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  animation: fadeUp 0.4s ease both;
+}
+
+.post-full-text {
+  color: rgba(240, 236, 228, 0.65);
+  line-height: 1.85;
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+/* Comment box */
+.comment-box {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 4px;
+  padding: 1.5rem;
+}
+
+.comment-box h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: #f0ece4;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.comment-box textarea {
+  width: 100%;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 2px;
+  padding: 0.85rem 1rem;
+  color: #f0ece4;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  resize: vertical;
+  outline: none;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+  transition: border-color 0.2s;
+}
+
+.comment-box textarea::placeholder {
+  color: rgba(240, 236, 228, 0.2);
+}
+
+.comment-box textarea:focus {
+  border-color: rgba(255, 200, 100, 0.3);
+}
+
+.comment-box button {
+  background: #ffc864;
+  color: #0a0a0a;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 2px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.comment-box button:hover {
+  background: #ffb030;
+}
+
+.comment-success {
+  color: #ffc864;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.85rem;
+}
+
+/* Locked comment */
+.comment-locked {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255, 200, 100, 0.04);
+  border: 1px solid rgba(255, 200, 100, 0.1);
+  border-radius: 4px;
+  padding: 1.25rem 1.5rem;
+}
+
+.lock-icon {
+  font-size: 1.2rem;
+  color: #ffc864;
+}
+
+.comment-locked p {
+  font-size: 0.9rem;
+  color: rgba(240, 236, 228, 0.5);
+  margin: 0;
+}
+
+.comment-locked a {
+  color: #ffc864;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.comment-locked a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .posts-header {
+    padding: 7rem 1.5rem 3rem;
+  }
+  .posts-container {
+    padding: 1rem 1.5rem;
+  }
+}
