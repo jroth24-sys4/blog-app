@@ -33,7 +33,7 @@ const SAMPLE_POSTS = [
   },
 ];
 
-function CommentBox() {
+function CommentBox({ username }) {
   const [comment, setComment] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
@@ -48,7 +48,7 @@ function CommentBox() {
 
   return (
     <div className="comment-box">
-      <h4>Leave a comment</h4>
+      <h4>Leave a comment as <span style={{color: "#ffc864"}}>{username}</span></h4>
       {submitted ? (
         <p className="comment-success">✦ Comment posted successfully!</p>
       ) : (
@@ -56,7 +56,7 @@ function CommentBox() {
           <textarea
             value={comment}
             onChange={(e) => setComment(e.target.value)}
-            placeholder="Share your thoughts..."
+            placeholder={`Write your comment, ${username}...`}
             rows={3}
           />
           <button type="submit">Post Comment</button>
@@ -73,7 +73,6 @@ export default function Posts() {
   return (
     <div className="posts-page">
       <div className="grain" />
-
       <div className="posts-header">
         <div className="posts-header-inner">
           <h1>The Inkwell Blog</h1>
@@ -112,7 +111,7 @@ export default function Posts() {
                   </p>
 
                   {user ? (
-                    <CommentBox />
+                    <CommentBox username={user.username} />
                   ) : (
                     <div className="comment-locked">
                       <span className="lock-icon">◈</span>
